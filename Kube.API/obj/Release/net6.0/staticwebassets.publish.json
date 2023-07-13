@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ivIWCmCvr1sd82u+Nhsc0kzxmhQ5SkPsk5e2ewvjIIQ=",
+  "Source": "Kube.API",
+  "BasePath": "_content/Kube.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

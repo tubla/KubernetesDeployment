@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kube.Client", "Kube.Client\Kube.Client.csproj", "{8303F744-2172-4F38-A20B-F2B1176F540D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kube.API", "Kube.API\Kube.API.csproj", "{FAF3B3F7-7F17-4C29-9884-3B3C0CAFCF89}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{801FD061-CAF8-47B0-A4AA-52A6F630E15A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KubeConfigs", "KubeConfigs", "{D68E347D-2A50-44E6-AB2F-8FCAE0894D69}"
+	ProjectSection(SolutionItems) = preProject
+		KubeConfigs\kubeapi.yml = KubeConfigs\kubeapi.yml
+		KubeConfigs\kubeapp.yml = KubeConfigs\kubeapp.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8303F744-2172-4F38-A20B-F2B1176F540D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8303F744-2172-4F38-A20B-F2B1176F540D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8303F744-2172-4F38-A20B-F2B1176F540D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8303F744-2172-4F38-A20B-F2B1176F540D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF3B3F7-7F17-4C29-9884-3B3C0CAFCF89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF3B3F7-7F17-4C29-9884-3B3C0CAFCF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF3B3F7-7F17-4C29-9884-3B3C0CAFCF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF3B3F7-7F17-4C29-9884-3B3C0CAFCF89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{801FD061-CAF8-47B0-A4AA-52A6F630E15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{801FD061-CAF8-47B0-A4AA-52A6F630E15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{801FD061-CAF8-47B0-A4AA-52A6F630E15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{801FD061-CAF8-47B0-A4AA-52A6F630E15A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D329DEEF-9BCA-4EE1-B695-2FCD1E7710F9}
+	EndGlobalSection
+EndGlobal

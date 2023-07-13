@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  kube.api:
+    image: ${DOCKER_REGISTRY-}kubeapi
+    build:
+      context: .
+      dockerfile: Kube.API/Dockerfile
+
+  kube.client:
+    image: ${DOCKER_REGISTRY-}kubeclient
+    build:
+      context: .
+      dockerfile: Kube.Client/Dockerfile
+

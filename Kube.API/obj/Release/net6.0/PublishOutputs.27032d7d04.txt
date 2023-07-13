@@ -1,0 +1,11 @@
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Kube.API.exe
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Kube.API.dll
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Kube.API.deps.json
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Kube.API.runtimeconfig.json
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Kube.API.pdb
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Learning\DotnetCore\K8s\KubernetesDeployment\Kube.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

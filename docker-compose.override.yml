@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  kube.api:    
+    container_name: kubeapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8001:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  kube.client:
+    container_name: kubeclient
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "KubeApiurl=http://kubeapi" 
+    ports:
+      - "8000:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

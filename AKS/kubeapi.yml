@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeapi-deployment  
+  labels:
+    app: kubeapi
+spec:
+  # A deployment's specification really only 
+  # has a few useful options
+  
+  # 1. How many copies of each pod do we want?
+  replicas: 1
+  # 3. Which pods are managed by this deployment?
+  selector:
+    # This must match the labels we set on the pod!
+    matchLabels:
+      app: kubeapi
+  
+  # This template field is a regular pod configuration 
+  # nested inside the deployment spec
+  template:
+    metadata:
+      # Set labels on the pod.
+      # This is used in the deployment selector.
+      labels:
+        app: kubeapi
+    spec:
+      containers:
+        - name: kubeapi
+      # THIS CHANGE IS MUST FOR AKS -------------------
+          image: rrkubeacr.azurecr.io/kubeapi:v1
+      # ---------------------------------------
+          resources:
+            requests:
+              cpu:  400m
+              memory: 200Mi
+            limits:           
+              cpu:  500m    
+              memory: 200Mi            
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+      # THIS CHANGE IS MUST FOR AKS -------------------
+      imagePullSecrets:
+        - name: acr-secret
+      # ---------------------------------------
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeapi-service
+spec:
+  # type: NodePort // NODEPORT IS REQUIRED FOR ACCESSING API IN THE LOCAL KUBERNETES ENVIRONMENT
+  selector:
+    app: kubeapi
+  ports:
+    - port: 80 # // UPDATE THE PORT TO DEFAULT ONE
+      # targetPort: 80 // PORT FORWARDING IS NOT REQUIRED IN CASE OF AKS
+      # nodePort: 31000 // NO EXTERNAL PORT IS REQUIRED TO ACCESS THE API, COMMUNICATION OF APIs WILL TAKE PLACE INSIDE AKS CLUSTER
+      protocol: TCP

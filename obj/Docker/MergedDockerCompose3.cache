@@ -1,0 +1,62 @@
+name: dockercompose11586732974342043853
+services:
+  kube.api:
+    build:
+      context: D:\Learning\DotnetCore\K8s\KubernetesDeployment
+      dockerfile: Kube.API/Dockerfile
+    container_name: kubeapi
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: kubeapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8081"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\RAHUL\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\RAHUL\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+  kube.client:
+    build:
+      context: D:\Learning\DotnetCore\K8s\KubernetesDeployment
+      dockerfile: Kube.Client/Dockerfile
+    container_name: kubeclient
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      KubeApiurl: https://kubeapi
+    image: kubeclient
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8000"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\RAHUL\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\RAHUL\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: dockercompose11586732974342043853_default
