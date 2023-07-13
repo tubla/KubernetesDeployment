@@ -3,8 +3,13 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- main
-
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - Kube.API/*
+      - AKS/kubeapi.yml
 resources:
 - repo: self
 
@@ -42,8 +47,8 @@ stages:
         tags: |
           $(tag)
 
-    - upload: manifests
-      artifact: manifests
+    - upload: AKS
+      artifact: AKS
 
 - stage: Deploy
   displayName: Deploy stage
@@ -72,9 +77,8 @@ stages:
               action: deploy
               # UPDATE manifests yaml file from deployment.yml to kubeapi.yml
               manifests: |
-                $(Pipeline.Workspace)/manifests/kubeapi.yml
+                $(Pipeline.Workspace)/AKS/kubeapi.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
-
