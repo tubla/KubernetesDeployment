@@ -19,7 +19,7 @@ variables:
   dockerRegistryServiceConnection: '01c83c67-15e4-40ee-a83a-f9b9fd9ed2e2'
   imageRepository: 'kubeclient' # This value should be same as ACR repository name.
   containerRegistry: 'rrkubeacr.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: 'Kube.Client/Dockerfile' # Update the docker file path
   tag: '$(Build.BuildId)'
   imagePullSecret: 'rrkubeacr2475b879-auth'
 
