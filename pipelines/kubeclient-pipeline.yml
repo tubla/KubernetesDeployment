@@ -17,7 +17,7 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '01c83c67-15e4-40ee-a83a-f9b9fd9ed2e2'
-  imageRepository: 'kubeapp'
+  imageRepository: 'kubeclient' # This value should be same as ACR repository name.
   containerRegistry: 'rrkubeacr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
