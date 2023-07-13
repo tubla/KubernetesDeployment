@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '61aeb405-6953-4388-9334-2de2b6832489'
-  imageRepository: 'tublakubernetesdeployment'
+  imageRepository: 'kubeapi'
   containerRegistry: 'rrkubeacr.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Kube.API/Dockerfile'
   tag: '$(Build.BuildId)'
