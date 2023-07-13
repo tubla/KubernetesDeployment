@@ -38,6 +38,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
+        buildContext: $(Build.SourcesDirectory) # ADD BUILD CONTEXT
         tags: |
           $(tag)
 
@@ -69,9 +70,9 @@ stages:
             displayName: Deploy to Kubernetes cluster
             inputs:
               action: deploy
+              # UPDATE manifests yaml file from deployment.yml to kubeapi.yml
               manifests: |
-                $(Pipeline.Workspace)/manifests/deployment.yml
-                $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/manifests/kubeapi.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
