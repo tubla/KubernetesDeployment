@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kubeapi 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubeapi
+  template:
+    metadata:
+      labels:
+        app: kubeapi 
+    spec:
+      containers:
+        - name: kubeapi 
+          image: rrkubeacr.azurecr.io/kubeapi
+          ports:
+          - containerPort: 80
